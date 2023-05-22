@@ -1,0 +1,51 @@
+<%- include('../includes/head') %>
+<%- include('../includes/nav') %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8" style="padding-top: 30px;">
+      <h1 class="text-center">Faça seu cadastro</h1>
+      <div class="d-flex justify-content-center">
+        <div class="col-lg-6">
+          <form action="/cadastro/cadastro" method="post" style="width: 400px;">
+            <div class="row">
+              <div class="col-lg">
+                <div class="mb-2">
+                  <label>Nome</label>
+                  <input type="email" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <label>Sobrenome</label>
+                  <input type="password" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <label>Email</label>
+                  <input type="password" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <label>telefone</label>
+                  <input type="password" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <label>Senha</label>
+                  <input type="password" class="form-control">
+                </div>
+                <div class="mb-2">
+                  <label>Confirmação de senha</label>
+                  <input type="password" class="form-control">
+                </div>
+                <div>
+                  <input type="checkbox" class="form-check-input">
+                  <label class="mb-2 form-check-label">Eu li e aceito os <a href="/termos">termos de uso</a></label>
+                </div>
+                <div class="mb-3 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary" style="width: 400px;">Criar minha conta</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../includes/footer') %>
