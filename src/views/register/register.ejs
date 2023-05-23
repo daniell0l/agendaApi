@@ -6,36 +6,36 @@
       <h1 class="text-center">Faça seu cadastro</h1>
       <div class="d-flex justify-content-center">
         <div class="col-lg-6">
-          <form action="/cadastro/cadastro" method="post" style="width: 400px;">
+          <form action="/register/acess" method="post" style="width: 400px;">
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>
             <div class="row">
               <div class="col-lg">
                 <div class="mb-2">
                   <label>Nome</label>
-                  <input type="email" class="form-control">
+                  <input type="name" class="form-control" name="name">
                 </div>
                 <div class="mb-2">
                   <label>Sobrenome</label>
-                  <input type="password" class="form-control">
+                  <input type="name" class="form-control" name="name">
                 </div>
                 <div class="mb-2">
                   <label>Email</label>
-                  <input type="password" class="form-control">
+                  <input type="email" class="form-control" name="email">
                 </div>
                 <div class="mb-2">
                   <label>telefone</label>
-                  <input type="password" class="form-control">
+                  <input type="number" class="form-control" name="number">
                 </div>
                 <div class="mb-2">
                   <label>Senha</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" name="password">
                 </div>
                 <div class="mb-2">
                   <label>Confirmação de senha</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" name="password">
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input">
+                  <input type="checkbox" class="form-check-input" required>
                   <label class="mb-2 form-check-label">Eu li e aceito os <a href="/termos">termos de uso</a></label>
                 </div>
                 <div class="mb-3 d-flex justify-content-center">
