@@ -5,7 +5,7 @@ const registerSchema = new mongoose.Schema({
   descricao: String,
 });
 
-const registerModel = mongoose.model('Register', registerSchema);
+const registerModel = mongoose.model('register', registerSchema);
 
 class Register {
   constructor(body) {
