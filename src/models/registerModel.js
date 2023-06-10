@@ -31,9 +31,6 @@ class Register {
       }
 
       this.user = await RegisterModel.create(this.body);
-      // this.successMessage = 'Registro concluído com sucesso!';
-      // setTimeout(() => {
-      // }, 3000);
     } catch (error) {
       console.log(error);
       this.errors.push('Ocorreu um erro ao criar o usuário.');
