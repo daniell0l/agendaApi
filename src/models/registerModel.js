@@ -52,6 +52,10 @@ class Register {
       this.errors.push('A senha deve conter pelo menos uma letra maiúscula.');
     }
 
+    if (!/[a-z]/.test(this.body.senha)) {
+      this.errors.push('A senha deve conter pelo menos uma letra minúscula.');
+    }
+
     if (!/\d/.test(this.body.senha)) {
       this.errors.push('A senha deve conter pelo menos um número.');
     }

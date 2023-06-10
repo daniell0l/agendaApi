@@ -7,45 +7,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const successMessage = document.getElementById('success-message');
   const form = document.querySelector('form');
 
-  // Exibe a mensagem de erro quando o formulário é enviado
   form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Impede o envio do formulário
+    event.preventDefault();
     const error = '<%= typeof register !== "undefined" && register.errors.length > 0 %>';
     if (error) {
       errorMessage.style.display = 'block';
-      errorMessage.classList.add('alert', 'alert-danger'); // Adiciona classes para o alerta vermelho
+      errorMessage.classList.add('alert', 'alert-danger');
       setTimeout(() => {
         errorMessage.style.display = 'none';
-        errorMessage.classList.remove('alert', 'alert-danger'); // Remove as classes do alerta vermelho
+        errorMessage.classList.remove('alert', 'alert-danger');
       }, 3000);
     } else {
-      form.submit(); // Envia o formulário se não houver erros
+      form.submit();
     }
   });
 
-  // Verifica se há erros ao carregar a página e exibe a mensagem de erro
-  const errorOnLoad = '<%= typeof register !== "undefined" && register.errors.length > 0 %>';
-  if (errorOnLoad) {
-    errorMessage.style.display = 'block';
-    errorMessage.classList.add('alert', 'alert-danger'); // Adiciona classes para o alerta vermelho
-    setTimeout(() => {
-      errorMessage.style.display = 'none';
-      errorMessage.classList.remove('alert', 'alert-danger'); // Remove as classes do alerta vermelho
-    }, 3000); // Tempo em milissegundos (3 segundos)
-  }
-
-  // Verifica se há uma mensagem de sucesso e exibe o alerta
   if (successMessage.textContent !== '') {
     successMessage.style.display = 'block';
-    successMessage.classList.add('alert', 'alert-success'); // Adiciona classes para o alerta de sucesso
+    successMessage.classList.add('alert', 'alert-success'); 
     setTimeout(() => {
       successMessage.style.display = 'none';
-      successMessage.classList.remove('alert', 'alert-success'); // Remove as classes do alerta de sucesso
-      window.location.href = '/home'; // Redireciona para a página inicial após 3 segundos
-    }, 3000); // Tempo em milissegundos (3 segundos)
+      successMessage.classList.remove('alert', 'alert-success');
+    }, 3000);
   }
 });
-
 </script>
 
 <div class="container">
