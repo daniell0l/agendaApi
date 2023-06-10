@@ -24,10 +24,16 @@ class Register {
     if (this.errors.length > 0) return;
 
     try {
+      const emailExists = await RegisterModel.exists({ email: this.body.email });
+      if (emailExists) {
+        this.errors.push('O email já está registrado.');
+        return;
+      }
+
       this.user = await RegisterModel.create(this.body);
-      this.successMessage = 'Registro concluído com sucesso!';
-      setTimeout(() => {
-      }, 3000);
+      // this.successMessage = 'Registro concluído com sucesso!';
+      // setTimeout(() => {
+      // }, 3000);
     } catch (error) {
       console.log(error);
       this.errors.push('Ocorreu um erro ao criar o usuário.');

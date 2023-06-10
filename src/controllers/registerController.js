@@ -12,6 +12,6 @@ exports.registerSubmit = async (req, res) => {
     return res.render('register/register', { register: register });
   }
   const successMessage = 'Cadastro realizado com sucesso!';
-  res.render('register/register', { successMessage: successMessage });
- 
+  res.render('register/register', { successMessage: successMessage }, 3000);
+  
 };
