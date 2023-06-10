@@ -12,6 +12,6 @@ route.get('/login', loginController.login);
 
 // Rotas de cadastro
 route.get('/register', registerController.register);
-route.post('/register/acess', registerController.access);
+route.post('/register', registerController.registerSubmit);
 
 module.exports = route;
