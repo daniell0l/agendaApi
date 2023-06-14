@@ -1,52 +1,13 @@
 <%- include('../includes/head') %>
 <%- include('../includes/nav') %>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const errorMessage = document.getElementById('error-message');
-  const successMessage = document.getElementById('success-message');
-  const form = document.querySelector('form');
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const error = '<%= typeof register !== "undefined" && register.errors.length > 0 %>';
-    if (error) {
-      errorMessage.style.display = 'block';
-      errorMessage.classList.add('alert', 'alert-danger');
-      setTimeout(() => {
-        errorMessage.style.display = 'none';
-        errorMessage.classList.remove('alert', 'alert-danger');
-      }, 3000);
-    } else {
-      form.submit();
-    }
-  });
-
-  if (successMessage.textContent !== '') {
-    successMessage.style.display = 'block';
-    successMessage.classList.add('alert', 'alert-success'); 
-    setTimeout(() => {
-      successMessage.style.display = 'none';
-      successMessage.classList.remove('alert', 'alert-success');
-    }, 3000);
-  }
-});
-</script>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8" style="padding-top: 30px;">
       <h1 class="text-center">Faça seu cadastro</h1>
-      <div id="success-message" class="success-message text-center">
-        <% if (typeof successMessage !== 'undefined' && successMessage !== '') { %>
-          <div class="alert alert-success"><%= successMessage %></div>
-        <% } %>
-      </div>      
-      <div id="error-message" class="error-message text-center">
-        <% if (typeof register !== 'undefined' && register.errors.length > 0) { %>
-          <div class="alert alert-danger"><%= register.errors[0] %></div>
-        <% } %>
-      </div>
+      
+      <%- include('../includes/messages') %>
+
       <div class="d-flex justify-content-center">
         <div class="col-lg-6">
           <form action="/register" method="post" style="width: 400px;">
