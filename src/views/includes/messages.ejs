@@ -9,11 +9,7 @@
       const error = '<%= typeof register !== "undefined" && register.errors.length > 0 %>';
       if (error) {
         errorMessage.style.display = 'block';
-        errorMessage.classList.add('alert', 'alert-danger');
-        setTimeout(() => {
-          errorMessage.style.display = 'none';
-          errorMessage.classList.remove('alert', 'alert-danger');
-        }, 3000);
+        errorMessage.classList.add('alert', 'alert-danger');       
       } else {
         form.submit();
       }
@@ -22,10 +18,6 @@
     if (successMessage.textContent !== '') {
       successMessage.style.display = 'block';
       successMessage.classList.add('alert', 'alert-success'); 
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-        successMessage.classList.remove('alert', 'alert-success');
-      }, 3000);
     }
   });
   </script>

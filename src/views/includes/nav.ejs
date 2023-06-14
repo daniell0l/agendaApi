@@ -1,12 +1,12 @@
 <nav class="navbar bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">Agenda</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Link</a>
-      </li>
-    </ul>
+    <a class="navbar-brand text-white" href="/login">Agenda</a>
+    <% if (currentPage === 'home/home') { %>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/logout">Sair</a>
+        </li>
+      </ul>
+    <% } %>
   </div>
 </nav>
-
-

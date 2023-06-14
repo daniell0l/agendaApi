@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcryptjs = require('bcryptjs')
 
 const registerSchema = new mongoose.Schema({
   nome: { type: String, required: true },
@@ -29,6 +30,9 @@ class Register {
         this.errors.push('O email já está registrado.');
         return;
       }
+
+      const salt = bcryptjs.genSaltSync();
+      this.body.senha = bcryptjs.hashSync(this.body.senha, salt);
 
       this.user = await RegisterModel.create(this.body);
     } catch (error) {
